@@ -1,20 +1,20 @@
 {
     "prd": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-pooolservicesite-prd-00818-authRole",
-            "UnauthRoleArn": "arn:aws:iam::885364066858:role/amplify-pooolservicesite-prd-00818-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::885364066858:role/amplify-pooolservicesite-prd-00818-authRole",
+            "AuthRoleName": "amplify-pooolservicesite-prd-10816-authRole",
+            "UnauthRoleArn": "arn:aws:iam::885364066858:role/amplify-pooolservicesite-prd-10816-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::885364066858:role/amplify-pooolservicesite-prd-10816-authRole",
             "Region": "ap-northeast-1",
-            "DeploymentBucketName": "amplify-pooolservicesite-prd-00818-deployment",
-            "UnauthRoleName": "amplify-pooolservicesite-prd-00818-unauthRole",
-            "StackName": "amplify-pooolservicesite-prd-00818",
-            "StackId": "arn:aws:cloudformation:ap-northeast-1:885364066858:stack/amplify-pooolservicesite-prd-00818/009a0c60-e34f-11ec-a46c-064b87435fb9",
-            "AmplifyAppId": "d288t8h1yw52d6"
+            "DeploymentBucketName": "amplify-pooolservicesite-prd-10816-deployment",
+            "UnauthRoleName": "amplify-pooolservicesite-prd-10816-unauthRole",
+            "StackName": "amplify-pooolservicesite-prd-10816",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:885364066858:stack/amplify-pooolservicesite-prd-10816/61857980-e357-11ec-aa70-0a264a5ad667",
+            "AmplifyAppId": "d24qbs8nct6pn5"
         },
         "categories": {
             "hosting": {
                 "amplifyhosting": {
-                    "appId": "d288t8h1yw52d6",
+                    "appId": "d24qbs8nct6pn5",
                     "type": "cicd"
                 }
             }
