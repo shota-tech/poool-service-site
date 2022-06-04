@@ -5,5 +5,25 @@
       "type": "cicd",
       "lastPushTimeStamp": "2022-06-03T16:11:27.774Z"
     }
+  },
+  "api": {
+    "pooolservicesite": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-06-04T05:11:21.639Z",
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
   }
 }

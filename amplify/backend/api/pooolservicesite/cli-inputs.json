@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "pooolservicesite",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/shota/src/github.com/shota-tech/poool-service-site/amplify/backend/api/pooolservicesite/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-06-04T05:11:21.639Z",
+      "keyDescription": ""
+    }
+  }
+}
