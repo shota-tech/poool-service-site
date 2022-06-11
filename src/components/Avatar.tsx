@@ -11,9 +11,11 @@ export const Avatar: FC<Props> = ({ src, name, children }) => {
   return (
     <Stack direction="column" justify="center" align="center" spacing={8}>
       <Image src={src} alt={name} boxSize="3xs" objectFit="cover" borderRadius="full" />
-      <Heading size="lg">{name}</Heading>
+      <Heading size="lg" color="gray.800">
+        {name}
+      </Heading>
       <Box w="xs" overflowWrap="anywhere">
-        <Text>{children}</Text>
+        <Text color="gray.800">{children}</Text>
       </Box>
     </Stack>
   )

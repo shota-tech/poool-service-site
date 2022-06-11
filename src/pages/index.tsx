@@ -182,14 +182,14 @@ const Home: NextPage = () => {
       </Section>
 
       <Section teal>
-        <VStack justify="center" align="center" spacing={16} minH="100vh" py={24}>
+        <VStack justify="center" align="center" spacing={16} minH="110vh" py={24}>
           <Heading color="gray.100">TIMELINE</Heading>
           {!!isMobile ? <TimelineForMobile /> : <TimelineForPC />}
         </VStack>
       </Section>
 
       <Section>
-        <VStack justify="center" align="center" spacing={16} minH="100vh" py={24}>
+        <VStack justify="center" align="center" spacing={16} minH="110vh" py={24}>
           <Heading color="gray.800">TEAM</Heading>
           <Stack direction={{ base: 'column', md: 'row' }} justify="center" align="start" spacing={24}>
             <Avatar src="profile/chiba.png" name="千葉 のどか">
@@ -206,17 +206,22 @@ const Home: NextPage = () => {
       </Section>
 
       <Section teal>
-        <VStack justify="center" align="center" minH="100vh">
-          <Center h="xl" w={{ base: 'full', md: '2xl' }} rounded="xl" shadow="2xl" bg="gray.50" px={4}>
+        <VStack justify="center" align="center" minH="110vh">
+          <Center h="2xl" w={{ base: 'full', md: '2xl' }} rounded="xl" shadow="2xl" bg="gray.50" px={4}>
             <VStack w={{ base: 'sm', md: 'lg' }} spacing={8}>
-              <Heading color="gray.800">CONTACT</Heading>
               <VStack spacing={4} w="full">
-                <FormText id="name" name="NAME" required />
-                <FormText id="email" name="EMAIL" required />
-                <FormTextarea id="message" name="MESSAGE" />
+                <Heading color="gray.800">事前登録</Heading>
+                <Text fontSize={16} color="gray.800">
+                  事前登録者には最新情報や限定公開の案内、検査割引キャンペーンなどの情報をご連絡いたします。
+                </Text>
+              </VStack>
+              <VStack spacing={4} w="full">
+                <FormText id="name" name="名前" required />
+                <FormText id="email" name="メールアドレス" required />
+                <FormTextarea id="message" name="メッセージ" placeholder="その他コメントなどがあればご記入ください。" />
               </VStack>
               <Button colorScheme="teal" isFullWidth>
-                SEND
+                送信
               </Button>
             </VStack>
           </Center>
