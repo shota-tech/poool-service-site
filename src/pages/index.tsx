@@ -1,6 +1,22 @@
 import type { NextPage } from 'next'
-import { Box, Button, Center, Heading, Text, Stack, VStack, Image, useBreakpointValue } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Center,
+  Heading,
+  Text,
+  Stack,
+  VStack,
+  Image,
+  useBreakpointValue,
+  useToast,
+} from '@chakra-ui/react'
+import { useForm, FormProvider } from 'react-hook-form'
 import { MdPhoneIphone, MdShoppingCart, MdAutorenew, MdSecurity, MdOutlineScience } from 'react-icons/md'
+import { Amplify, API, graphqlOperation } from 'aws-amplify'
+import { createUser } from '@/graphql/mutations'
+import { CreateUserInput } from '@/API'
+import awsconfig from '@/aws-exports'
 import { FaToilet, FaCoins } from 'react-icons/fa'
 import {
   Avatar,
@@ -9,6 +25,7 @@ import {
   BlockTitle,
   BlockBody,
   FormText,
+  FormEmail,
   FormTextarea,
   Section,
   Span,
@@ -21,8 +38,50 @@ import {
   Triangle,
 } from '@/components'
 
+Amplify.configure(awsconfig)
+
+type FormData = {
+  name: string
+  email: string
+  message: string
+}
+
 const Home: NextPage = () => {
   const isMobile = useBreakpointValue({ base: true, md: false })
+  const toast = useToast({
+    position: 'top',
+  })
+  const methods = useForm<FormData>()
+  const {
+    formState: { isSubmitting },
+    handleSubmit,
+    reset,
+  } = methods
+
+  const onSubmit = async (data: FormData) => {
+    console.log('submit')
+    try {
+      const input: CreateUserInput = {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      }
+      await API.graphql(graphqlOperation(createUser, { input }))
+      reset()
+      toast({
+        title: '登録が完了しました。',
+        status: 'success',
+        isClosable: true,
+      })
+    } catch (err) {
+      console.error(err)
+      toast({
+        title: '登録に失敗しました。',
+        status: 'error',
+        isClosable: true,
+      })
+    }
+  }
 
   return (
     <Stack direction="column">
@@ -208,22 +267,30 @@ const Home: NextPage = () => {
       <Section teal>
         <VStack justify="center" align="center" minH="110vh">
           <Center h="2xl" w={{ base: 'full', md: '2xl' }} rounded="xl" shadow="2xl" bg="gray.50" px={4}>
-            <VStack w={{ base: 'sm', md: 'lg' }} spacing={8}>
-              <VStack spacing={4} w="full">
-                <Heading color="gray.800">事前登録</Heading>
-                <Text fontSize={16} color="gray.800">
-                  事前登録者には最新情報や限定公開の案内、検査割引キャンペーンなどの情報をご連絡いたします。
-                </Text>
-              </VStack>
-              <VStack spacing={4} w="full">
-                <FormText id="name" name="名前" required />
-                <FormText id="email" name="メールアドレス" required />
-                <FormTextarea id="message" name="メッセージ" placeholder="その他コメントなどがあればご記入ください。" />
-              </VStack>
-              <Button colorScheme="teal" isFullWidth>
-                送信
-              </Button>
-            </VStack>
+            <FormProvider {...methods}>
+              <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                <VStack w={{ base: 'sm', md: 'lg' }} spacing={8}>
+                  <VStack spacing={4} w="full">
+                    <Heading color="gray.800">事前登録</Heading>
+                    <Text fontSize={16} color="gray.800">
+                      事前登録者には最新情報や限定公開の案内、検査割引キャンペーンなどの情報をご連絡いたします。
+                    </Text>
+                  </VStack>
+                  <VStack spacing={4} w="full">
+                    <FormText id="name" name="名前" required />
+                    <FormEmail id="email" name="メールアドレス" required />
+                    <FormTextarea
+                      id="message"
+                      name="メッセージ"
+                      placeholder="その他コメントなどがあればご記入ください。"
+                    />
+                  </VStack>
+                  <Button colorScheme="teal" type="submit" disabled={isSubmitting} isFullWidth>
+                    送信
+                  </Button>
+                </VStack>
+              </form>
+            </FormProvider>
           </Center>
         </VStack>
       </Section>
