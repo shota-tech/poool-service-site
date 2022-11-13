@@ -251,14 +251,14 @@ const Home: NextPage = () => {
         <VStack justify="center" align="center" spacing={16} minH="110vh" py={24}>
           <Heading color="gray.800">TEAM</Heading>
           <Stack direction={{ base: 'column', md: 'row' }} justify="center" align="start" spacing={24}>
-            <Avatar src="profile/chiba.png" name="千葉 のどか">
-              東京工業大学生命理工学院修士課程を経て、博士課程在学中。ヒト腸内細菌と疾患の関連性などを研究。主に腸内細菌に関するいろいろを担当。
+            <Avatar src="profile/member1.png" name="member1">
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             </Avatar>
-            <Avatar src="profile/iwamatsu.png" name="岩松 尚太">
-              早稲田大学政治経済学部卒業後、アクセンチュアに入社。その後FinTech系スタートアップにてエンジニア職に従事。主に技術周りのいろいろを担当。
+            <Avatar src="profile/member2.png" name="member2">
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             </Avatar>
-            <Avatar src="profile/sato.png" name="佐藤 龍之介">
-              早稲田大学商学部卒業後、楽天に入社。その後外資系暗号資産・ブロックチェーン企業にて管理業務に従事。主にその他いろいろを担当。
+            <Avatar src="profile/member3.png" name="member3">
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             </Avatar>
           </Stack>
         </VStack>
