@@ -1,7 +1,8 @@
-# Poool サービスサイト
+# Poool Service Site
 
-## 概要
-腸内細菌データ×ブロックチェーンをコンセプトとする「Poool」のサービスサイト(閉鎖済み)。
+A service website for Poool.
+The concept is to combine gut microbiome data with blockchain.
+It's now closed.
 
-## 画面キャプチャ
+## Screenshot
 ![screenshot](screenshot.png)
